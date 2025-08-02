@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shout Post – ShoutStack</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Squada+One&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+    <header class="app-header">
+      <a href="index.html">
+          <img src="/images/logo-wht.png" alt="ShoutStack Logo" class="logo" />
+      </a>
+
+      <nav id="navOverlay" class="nav-overlay">
+          <button id="closeNav" class="close-btn">&times;</button>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Shouts</a></li>
+            <li><a href="#">Creators</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+      </nav>
+
+      <!-- Moved after overlay for CSS targeting -->
+      <button id="burgerBtn" class="burger">&#9776;</button>
+  </header>
+
+  <main class="post-content container">
+    <!-- Shout media -->
+    <div class="shout-media">
+      <img src="/images/post-img.jpg" alt="Shout image or video preview" />
+    </div>
+
+    <!-- Shout content -->
+    <article class="shout-post">
+      <h2>Huge Congrats to Alex on Launch Day! Look at those steam numbers king 👑</h2>
+      <p class="post-meta">Shouted by Denby · August 2, 2025</p>
+      <p>
+        Just wanted to shout out Alex for shipping his first web game. It's slick, fast, and addictive — I was playing it well before they requested my shout out and it's already become a daily habbit.
+        Go check it out at <a href="#">play.alex.zone</a>
+      </p>
+    </article>
+
+    <!-- QR Code -->
+    <div class="shout-qr">
+
+      <!-- Tooltip box -->
+      <div class="tooltip-box" id="qrTooltipBox">
+        <button class="tooltip-close" id="qrTooltipClose">&times;</button>
+        <p>This QR code acts as a badge of authenticity.<br>Use it in marketing to prove the shout is real and publicly backed.</p>
+      </div>
+
+      <p class="qr-label">
+        Scan to verify endorsement
+        <span class="qr-info" id="qrTooltipBtn">ⓘ</span>
+      </p>
+      <img src="/images/qr-code.png" alt="QR Code Badge of Authenticity" />
+      <p>If you've got something to hype up, use ShoutStack to let the world know!</p>
+    </div>
+    <div class="back-home">
+      <a href="index.html">← Go back home</a>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Made with ❤️ by ShoutStack</p>
+      <div class="footer-links">
+        <a href="#">Terms</a> | 
+        <a href="#">Privacy</a> | 
+        <a href="#">Jobs</a>
+      </div>
+      <div class="footer-brand">
+          <a href="http://denby.design">denby.design</a>
+      </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+:root {
+  --black: #000000;
+  --charcoal: #111111;
+  --deep-purple: #6f00ff;
+  --electric-purple: #9a30ff;
+  --burnt-orange: #d74a1f;
+  --off-white: #f3f3f3;
+  --text-light: #e0e0e0;
+  --text-muted: #999999;
+  --bg: var(--charcoal);
+  --card: #1b1b1b;
+}
+
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-light);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Squada One', cursive;
+  color: var(--electric-purple);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--burnt-orange);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--burnt-orange);
+}
+
+/* Desktop container */
+.container {
+  max-width: 840px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 0rem 1.5rem 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Header */ 
+.app-header {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  display: none;
+}
+
+/* Burger Button */
+.burger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--electric-purple);
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--charcoal);
+  color: var(--text-light);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-overlay.active {
+  display: flex;
+}
+
+.nav-overlay ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-family: 'Squada One', cursive;
+}
+
+.nav-overlay ul li {
+  margin: 1rem 0;
+}
+
+.nav-overlay ul li a {
+  font-size: 2rem;
+  color: var(--electric-purple);
+  text-decoration: none;
+}
+
+.nav-overlay ul li a:hover {
+  color: var(--burnt-orange);
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.nav-overlay.active ~ .burger {
+  display: none;
+}
+
+.nav-overlay {
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.burger,
+.close-btn {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.burger:hover,
+.close-btn:hover {
+  transform: scale(1.1);
+  color: var(--burnt-orange);
+}
+
+.nav-overlay ul li a {
+  transition: transform 0.2s ease;
+}
+
+.nav-overlay ul li a:hover {
+  transform: scale(1.05); 
+}
+
+/* Banner styling */
+
+.shout-banner {
+  margin: 2rem 0;
+}
+
+.shout-banner img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Intro section */
+.shout-intro {
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.shout-intro h2 {
+  color: var(--burnt-orange);
+  font-size: 1.8rem;
+}
+
+/* Feed */
+.shout-feed {
+  margin-bottom: 2rem;
+}
+
+.shout-feed h3 {
+  font-size: 1.3rem;
+}
+
+.shout-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.shout-list li {
+  margin-bottom: 0.75rem;
+}
+
+.shout-list a {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.shout-rank {
+  color: var(--burnt-orange);
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.shout-views {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+}
+
+/* CTA: Available Creators */
+.shout-cta {
+  margin-bottom: 2rem;
+}
+
+.cta-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cta-list li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.cta-list strong {
+  color: var(--off-white);
+}
+
+.cta-list a {
+  text-decoration: underline;
+}
+
+.cta-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.cta-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Manage My Shouts */
+.manage-shouts {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.manage-button {
+  background-color: var(--electric-purple);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.manage-button:hover {
+  background-color: var(--burnt-orange);
+  color: #fff;
+}
+
+/* Post-specific */
+.post-content {
+  padding-bottom: 2rem;
+}
+
+.shout-post {
+  margin-bottom: 2rem;
+}
+
+.shout-post h2 {
+  font-size: 1.6rem;
+  color: var(--burnt-orange);
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.back-link {
+  text-align: left;
+}
+
+.back-link a {
+  font-size: 0.95rem;
+}
+
+.shout-media {
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.shout-media img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-home a {
+  color: var(--electric-purple);
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-home a:hover {
+  color: var(--burnt-orange);
+  text-decoration: underline;
+}
+
+/* QR Code at the bottom of post */
+.shout-qr {
+  text-align: center;
+  margin: 3rem 0 1rem;
+}
+
+.shout-qr img {
+  width: 175px;
+  height: auto;
+  margin-top: 0.5rem;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+}
+
+.qr-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.qr-info {
+  display: inline-block;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--electric-purple);
+  padding: 2px 8px;
+  line-height: 1;
+  vertical-align: middle;
+  background-color: var(--card);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.qr-info:hover {
+  background-color: var(--electric-purple);
+  color: var(--card);
+  transform: scale(1.05);
+}
+
+.tooltip-box {
+  background: var(--card);
+  color: var(--text-light);
+  border: 1px solid var(--electric-purple);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  position: relative;
+  display: none;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+.tooltip-box.active {
+  display: block;
+}
+
+.tooltip-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: none;
+  color: var(--text-muted);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.tooltip-box {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-box.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip-close:hover {
+  color: var(--electric-purple);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 1rem 0;
+}
+
+.footer-links,
+.footer-brand {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.footer-links a,
+.footer-brand a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-links a:hover,
+.footer-brand a:hover {
+  color: var(--electric-purple);
+  text-decoration: underline;
+}
+
+/* Desktop media queries */
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  .app-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2 2rem;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .shout-intro h2 {
+    font-size: 1.9rem;
+  }
+
+  .shout-feed h3,
+  .shout-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .shout-list a,
+  .cta-list li,
+  .manage-button {
+    font-size: 1.1rem;
+  }
+}
+
+/* Custom Hover Colors */
+.shout-list a {
+  color: var(--off-white);
+  transition: color 0.2s ease;
+}
+
+.shout-list a:hover {
+  color: var(--electric-purple);
+}
+
+.cta-info a {
+  color: var(--off-white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cta-info a:hover {
+  color: var(--burnt-orange);
+}
