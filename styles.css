@@ -443,6 +443,24 @@ a:hover {
   color: var(--electric-purple);
 }
 
+.profile-avatar {
+  width: 160px;
+  height: 160px;
+  margin-top: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.profile-info h1 {
+  color: var(--burnt-orange);
+}
+
+.profile-info h2 {
+  color: var(--off-white);
+}
+
 /* Footer */
 .app-footer {
   text-align: center;
