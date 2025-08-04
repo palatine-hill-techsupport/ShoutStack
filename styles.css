@@ -541,3 +541,62 @@ a:hover {
 .cta-info a:hover {
   color: var(--burnt-orange);
 }
+
+/* Mobile Warning */
+
+.mobile-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--charcoal);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-warning-box {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 430px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-warning h2 {
+  font-family: 'Squada One', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--electric-purple);
+}
+
+.mobile-warning p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.close-warning {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.close-warning:hover {
+  color: var(--electric-purple);
+}
